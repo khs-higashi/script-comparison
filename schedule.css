@@ -1,0 +1,124 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*当日香盤のカレンダー表示*/
+
+.calendar-slide-panel {
+	position: fixed;
+	top: 170px;
+	left: 0;
+	height: 500px;
+	width: 40px;
+	z-index: 1000;
+	display: flex;
+	flex-direction: row;
+	transition: width 0.3s ease;
+	border: 1px solid #ccc;
+	border-left: none;
+	overflow: hidden;
+}
+
+.calendar-slide-panel.open {
+	width: 30vw; /* 画面の30%を開いた状態で表示 */
+}
+
+.calendar-tab {
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+	cursor: pointer;
+	background-color: #333;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 100%;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.calendar-content {
+	flex-grow: 1;
+	padding: 20px;
+	display: none;
+	overflow-y: auto;
+	background-color: white;
+}
+
+.calendar-slide-panel.open .calendar-content {
+	display: block;
+}
+
+
+/*当日香盤のタイトル部分*/
+
+.schedule-date {
+	color: white;
+	margin-bottom: 16px;
+}
+
+.schedule-date-day {
+	font-size: 1.5rem;
+	font-weight: 700;
+	padding-right: 20px;
+}
+
+.schedule-date-sun {
+	font-size: 1.1rem;	
+	padding-right: 20px;	
+}
+
+.schedule-date-weather {
+	font-size: 1.1rem;	
+	padding-right: 20px;	
+}
+
+.schedule-location {
+	color: white;
+	margin-bottom: 10px;
+	border-left-style: solid;
+	border-left-color: white;
+	border-left-width: 5px;
+	padding-left: 10px;	
+}
+
+.schedule-scene {
+	color: white;
+	margin-bottom: 10px;
+	border-left-style: solid;
+	border-left-color: white;
+	border-left-width: 5px;
+	padding-left: 10px;	
+}
+
+
+/*当日香盤の時間設定部分*/
+.schedule-content {
+	color: white;
+}
+
+.schedule-content-text {
+	font-size: 1.4rem;
+	margin: 30px auto;
+}
+
+.schedule-content-timeset {
+	border: 3px solid white;
+	padding: 20px;
+	font-size: 1.3rem;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.schedule-content-tablebox {
+	text-align: center;
+	margin: 0 auto;
+	width: 150px;
+}
+
+
+
+
+
+

@@ -1,0 +1,369 @@
+@charset "utf-8";
+/* CSS Document */
+
+ {
+	border: 1px solid red;
+}
+
+/* 全体のスタイル */
+html, body {
+    height: 100%; /* ビューポートの高さを100%に */
+    margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: black;
+    display: flex;
+    flex-direction: column; /* 縦に配置 */
+    min-height: 100vh; /* ビューポートの高さを最低限確保 */
+	font-family: 
+	'Noto Sans JP', 
+	'M PLUS 1p', 
+	'Zen Kaku Gothic New',
+	'Yu Gothic UI', 
+	'Hiragino Kaku Gothic ProN',
+	sans-serif;	
+}
+
+main {
+    flex: 1 0 auto; /* メインが残りのスペースを占有 */;
+}
+
+section {
+	width: 95%;
+	margin: 0 auto;
+}
+
+
+.w1200 {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .w1200 {
+    width: 100%;
+  }
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	color: aqua;
+}
+
+p {
+	margin: 0;
+	color: white;
+}
+
+
+/* ヘッダー 未ログイン状態 */
+
+header {
+  position: relative;
+  z-index: 10;
+}
+
+.header-logout {
+    position: relative;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 10;
+}
+
+.header-logout-logo {
+    position: static; /* ← absoluteは使わない */
+    transform: none;  /* ← 中央寄せが不要に */
+	  margin: 0 auto;
+}
+
+.header-logout-logo img {
+    height: 50px; /* ロゴサイズ調整（必要に応じて） */
+}
+
+.header-logout-login {
+    position: absolute;
+    right: 20px;
+    font-size: 16px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 200px; /* 必要に応じて調整 */
+	margin-left: auto;
+}
+
+/* ヘッダー ログイン状態 */
+
+.header-login {
+  position: relative;
+  height: 80px;
+  display: flex;
+  justify-content: center; /* ロゴ中央 */
+  align-items: center;
+  background-color: black;
+  padding: 0 20px;
+}
+
+.header-login-logo {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.header-login-logo img {
+  height: 50px;
+}
+
+.header-login-logout {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header-loginnameface img {
+    width: 40px; /* 適切なサイズに調整 */
+    height: 40px;
+    object-fit: cover; /* 画像をコンテナにフィットさせる（縦横比を維持しつつ切り抜き） */
+    border-radius: 50%; /* 円形にする場合（任意） */
+    display: block; /* 余白を防ぐ */
+}
+
+/* --ヘッダー 作品ログイン状態-- */
+
+/* 全体のヘッダーを左右に配置 */
+.header-worklogin {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px 20px;
+	background: black;
+	color: white;
+}
+
+/* タイトル部分を左寄せ */
+.header-titlename-wrapper {
+	display: flex;
+	align-items: center; /* 第●話を縦方向中央に */
+}
+
+.header-titlename-left {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	margin-right: 20px; 
+}
+
+.header-titlename-right {
+	margin-left: 5px; 
+}
+
+.header-titlename-no {
+	margin: 0;
+}
+
+.header-titlename-crown {
+	font-size: 0.9rem;
+	font-weight: bold;	
+}
+
+.header-titlename-main {
+	font-size:1.4rem;
+	font-weight: bold;
+}
+
+.header-titlename-sub {
+	font-size:1.1rem;
+	font-weight: bold;
+	padding-left: 20px;
+}
+.header-titlename-no {
+	font-size:0.9rem;	
+}
+
+
+/* アイコン群を右寄せ */
+.header-icon {
+	display: flex;
+	align-items: center;
+	gap: 22px;
+	font-size: 1.4rem;
+}
+
+.header-icon a{
+	color: white;
+}
+
+.header-icon a:hover{
+	color: #007bff;
+}
+
+/* 顔アイコン＋▼部分 */
+.header-loginnameface {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.header-loginnameface img {
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.header-loginnameface .header-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+font-size: 1rem;
+}
+
+.header-loginnameface:hover .header-dropdown-menu {
+  display: block;
+}
+
+.header-loginnameface i.fa-caret-down {
+	margin-left: 5px;
+	font-size: 14px;
+	position: static;
+}
+
+/* プルダウン */
+.header-dropdown-menu {
+  top: 100%;  /* ← これにすると "真下にくっつく" */
+  margin-top: 0; 
+}
+
+.header-dropdown-menu li {
+  list-style: none;
+}
+
+.header-dropdown-menu li a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.header-dropdown-menu li a:hover {
+	color: white;
+  background-color: #007bff;
+}
+
+/* ドロップダウンメニュー初期非表示 */
+.header-dropdown-menu {
+	display: none;
+	position: absolute;
+	top: 55px;
+	right: 0;
+	background: white;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	list-style: none;
+	padding: 5px 0;
+	min-width: 120px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+	z-index: 1000;
+}
+
+.header-dropdown-menu.show {
+	display: block !important;
+}
+
+.header-dropdown-menu li:hover {
+	background-color: #f0f0f0;
+}
+
+.header-loginnameface {
+	overflow: visible !important;
+}
+
+
+
+/* フッター */
+
+footer {
+    flex-shrink: 0; /* フッターが縮まないように */
+}
+
+.footer-menu {
+	background-color: darkgray;
+	margin-top: 50px;
+}
+
+.footer-menu ul {
+	background-color: darkgray;	
+    display: flex;
+	justify-content: center; /* 水平方向の中央揃え */
+    list-style: none; /* リストのデフォルトマーカー（点）を削除 */
+    padding: 10px 0;
+	margin: 0;
+}
+
+.footer-menu li {
+    margin-right: 50px; /* 項目間の間隔（任意） */
+}
+
+.copyright {
+	color: white;
+	text-align: center;
+	padding: 10px 0;
+}
+
+/* ページトップへ移動 */
+
+.back-to-top {
+	position: fixed;
+	display: none;
+	bottom: 30px;
+	right: 30px;
+	padding: 7px 16px 10px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	cursor: pointer;
+	font-size: 30px;
+	border-radius: 50%;
+	z-index: 1000;
+	transition: opacity 0.3s ease;
+}
+
+/* ボタン表示時のスタイル */
+.back-to-top.show {
+	display: block;
+	opacity: 1;
+}
+
+/* ホバー時のスタイル */
+.back-to-top:hover {
+	background-color: aqua;
+	color: #007bff;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,299 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*非表示にするナビゲーション*/
+.work-navigation {
+	display: none;
+}
+
+/*ナビゲーション*/
+
+.nav-worklogin {
+	background-color: #414141;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;	
+	padding: 3px 10px;
+	height: 31px;
+	display: flex;
+	gap: 5px;
+	justify-content: center; /* 横方向中央揃え */
+	align-items: center;     /* 縦方向中央揃え */
+	font-size: 1.2rem;
+}
+
+.nav-worklogin-sub {
+	background-color: #777777;
+	border-bottom: 1px solid white;	
+	padding: 4px 8px 5px;
+	height: 25px;
+	display: flex;
+	justify-content: center; /* 横方向中央揃え */
+	align-items: center;     /* 縦方向中央揃え */
+	margin-bottom: 20px;
+}
+
+.nav-work-category {
+	position: relative;
+	display: flex; /* ← これで縦位置をしっかり確保 */
+	align-items: center;
+	justify-content: center;
+	height: 30px; /* 適度な高さを確保 */
+	padding: 0 10px;
+	font-weight: normal;
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.nav-work-category a {
+	color: white;
+	padding: 5px 20px;	
+}
+
+.nav-work-category a:hover {
+	color: white;
+	border-radius: 5px;
+	background-color: #007bff;	
+}
+
+/* 現在のページを示すクラス */
+.nav-work-category.active {
+	font-weight: bold;
+	color: white;
+}
+
+.nav-work-category.active {
+	font-weight: bold;	
+	color: #414141;
+	border-radius: 5px;
+	background-color: white;
+}
+
+/* 新規作品登録のジャンルの区分け */
+.genre-checklist {
+    padding: 10px;
+}
+
+.genre-checklist fieldset {
+    border: 1px solid lightgray;
+    padding: 10px 15px;
+    margin-top: 12px;
+}
+
+.genre-checklist legend {
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+.genre-checklist label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    white-space: nowrap;
+}
+
+.genre-checklist input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.rating-checklist input[type="checkbox"] {
+    margin-left: 23px;
+}
+
+/* 新規作品登録のサムネイル挿入 */
+.work-index-thumbnail-wrapper {
+	display: flex;
+	align-items: flex-start;
+	align-items: stretch; /* ← 高さを揃える */
+}
+
+.work-index-thumbnail-title {
+	width: 172px;
+	flex-shrink: 0;
+	border: 1px solid white;
+	border-right: none; /* ← 右側のボーダーを消す */
+	display: flex;              /* ← 中央揃えのために追加 */
+	align-items: center;        /* ← 縦位置中央 */
+	color: white;
+	padding-left: 10px;
+	font-weight: bold;
+ 	font-size: 1.1rem;
+}
+
+.work-index-thumbnail-image {
+	flex: 1;
+	border: 1px solid white;
+	padding: 10px;
+	display: flex;
+  	align-items: flex-start;
+}
+
+.work-thumbnail-buttons {
+	display: flex;
+	flex-direction: column;      /* 縦並びにする */
+	align-items: center;         /* 横方向中央（ボタンの水平位置） */
+	justify-content: center;     /* 縦方向中央（親要素の中で縦位置中央揃え） */
+	gap: 30px;                   /* 「変更」と「削除」の間隔 */
+	height: 100%;                /* 高さ合わせのため、親が伸びている前提 */
+}
+
+.work-thumbnail-preview {
+	padding-left: 20px;
+}
+
+.work-index-thumbnail-button {
+	width: 100px;
+	display: block;           /* ブロック化して幅を確実に適用 */
+	text-align: center;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.work-thumbnail-buttons .work-index-thumbnail-button {
+	width: 100px;
+	display: block;
+	text-align: center;
+	box-sizing: border-box;
+	margin: 0 auto;
+}
+
+.confirm-button-wrapper {
+	text-align: center;  /* ← これだけで中央に寄る */
+	margin-top: 30px;
+	cursor: pointer;	
+}
+
+/* 新規作品登録で作品名が未入力の場合に表示 */
+.work-index-text-input {
+    background-color: white; /* 通常時の白背景 */
+    width: 99%; /* フル幅を明示 */
+}
+
+/* エラー時のスタイル */
+.work-index-text-input.work-index-error-input {
+    background-color: white; /* 白背景を維持 */
+    box-shadow: inset 0 0 0 100px rgba(255, 0, 0, 0.3); /* 赤いオーバーレイ */
+    border: 2px solid red;
+}
+
+/* thanks.php用スタイル */
+.thanks-container {
+    padding: 30px;
+    background: #000;
+    text-align: center;
+	border: 1px solid gray;
+}
+
+.thanks-icon {
+    font-size: 60px;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.thanks-message {
+    margin: 25px 0;
+    padding: 15px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.next-steps {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.next-steps h4 {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.next-steps ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.next-steps li a {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.next-steps li a:hover {
+    background: #e0e0e0;
+}
+
+/* 動的ページの動作関連 */
+.success-message {
+	text-align: center;
+	font-size: 1.3rem;
+	color: white;
+}
+
+.error-message {
+	text-align: center;
+	font-size: 1.3rem;
+	color: red;	
+}
+
+/* ライトボックス用のスタイル */
+.work-image-container {
+    margin: 10px 0;
+}
+
+.work-image-thumbnail {
+    max-width: 200px;
+    max-height: 200px;
+    cursor: pointer;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.not-set {
+    color: #999;
+    font-style: italic;
+}
